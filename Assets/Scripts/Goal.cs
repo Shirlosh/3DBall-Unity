@@ -13,11 +13,8 @@ public class Goal : MonoBehaviour {
     {
         MoveBall component = other.gameObject.GetComponent<MoveBall>();
         if (component != null)
-        {        StartCoroutine(OnCollision()) ;
-
-            Victory.gameObject.SetActive(true);
-            //Wait(10);
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        {
+            StartCoroutine(OnCollision()) ;
         }
     }
 
