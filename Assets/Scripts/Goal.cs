@@ -1,18 +1,37 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour {
     
-    //[SerializeField] public Transform EndGame;
+    [SerializeField] public Transform Victory;
+    [SerializeField] public float TextTimer;
 
-    private void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
         MoveBall component = other.gameObject.GetComponent<MoveBall>();
         if (component != null)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            //EndGame.gameObject.SetActive(true);
+        {        StartCoroutine(OnCollision()) ;
+
+            Victory.gameObject.SetActive(true);
+            //Wait(10);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+
+     IEnumerator OnCollision()
+    {
+        Time.timeScale = 0;
+        Victory.gameObject.SetActive(true);
+        float pauseEndTime = Time.realtimeSinceStartup + TextTimer;
+        while (Time.realtimeSinceStartup < pauseEndTime)
+        {
+            yield return 0;
+        }
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
 }
