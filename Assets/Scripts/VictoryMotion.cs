@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class VictoryMotion : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Camera cam;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, 1);
+        Vector3 cam_pos = cam.transform.position; 
+        transform.position = new Vector3(cam_pos.x, cam_pos.y, cam_pos.z+5);
     }
 }
