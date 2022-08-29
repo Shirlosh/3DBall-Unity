@@ -62,6 +62,7 @@ public class GameManagement : MonoBehaviour
     public void NextHowToPlay2()
     {
         howToPlay2.gameObject.SetActive(false);
+        howToPlay1.gameObject.SetActive(true);
         HowToPlay.gameObject.SetActive(false);
         Menu.gameObject.SetActive(true);
     }
