@@ -24,9 +24,6 @@ public class CameraMovement : MonoBehaviour
     {
         if (beginGame)
         {
-            //cam.transform.position = target.transform.position + _vector3;
-            // Rotate the camera every frame so it keeps looking at the target
-            //cam.transform.LookAt(target.transform);
             if (Input.GetMouseButtonDown(0))
             {
                 previousPosition = cam.ScreenToViewportPoint(Input.mousePosition);
