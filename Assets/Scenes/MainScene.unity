@@ -391,7 +391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &112100987
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2775,6 +2775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Victory: {fileID: 112100991}
+  TextTimer: 2.5
 --- !u!65 &707905889
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2845,7 +2846,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707905887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -367.4, y: -213, z: -55.8}
+  m_LocalPosition: {x: -386.8, y: -217.9, z: -175.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 929760794}
@@ -5502,7 +5503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1767804276
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5519,7 +5520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.126, y: 0.177}
   m_AnchorMax: {x: 0.564, y: 0.574}
-  m_AnchoredPosition: {x: 127, y: 8}
+  m_AnchoredPosition: {x: 271, y: 8}
   m_SizeDelta: {x: 28.795807, y: 17.468}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1767804277
