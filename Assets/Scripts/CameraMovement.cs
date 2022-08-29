@@ -9,8 +9,8 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private float distanceToTarget = 10;
     [SerializeField] [Range(0, 360)] private int maxRotationInOneSwipe = 180;
-    public static bool beginGame = false;
     private Vector3 previousPosition;
+    public static bool beginGame = false;
 
     private Vector3 _vector3;
 
@@ -22,8 +22,11 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (beginGame == true)
+        if (beginGame)
         {
+            //cam.transform.position = target.transform.position + _vector3;
+            // Rotate the camera every frame so it keeps looking at the target
+            //cam.transform.LookAt(target.transform);
             if (Input.GetMouseButtonDown(0))
             {
                 previousPosition = cam.ScreenToViewportPoint(Input.mousePosition);
@@ -31,7 +34,6 @@ public class CameraMovement : MonoBehaviour
             else if (Input.GetMouseButton(0))
             {
                 Vector3 newPosition = cam.ScreenToViewportPoint(Input.mousePosition);
-
                 Vector3 direction = previousPosition - newPosition;
 
                 float rotationAroundYAxis = -direction.x * maxRotationInOneSwipe; // camera moves horizontally
@@ -47,16 +49,16 @@ public class CameraMovement : MonoBehaviour
 
                 previousPosition = newPosition;
             }
-        }
-        else
-        {
-            Vector3 newPosition = new Vector3(target.position.x, target.position.y + 5, target.position.z + 5);
+            else
+            {
+                Vector3 newPosition = new Vector3(target.position.x, target.position.y + 5, target.position.z + 5);
 
-            cam.transform.position = target.position;
+                cam.transform.position = target.position;
 
-            cam.transform.Translate(new Vector3(0, 0, -distanceToTarget));
+                cam.transform.Translate(new Vector3(0, 0, -distanceToTarget));
 
-            previousPosition = newPosition;
+                previousPosition = newPosition;
+            }
         }
     }
 }
