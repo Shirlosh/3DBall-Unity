@@ -9,6 +9,9 @@ public class GameManagement : MonoBehaviour
     [SerializeField] public Transform Menu;
     [SerializeField] public Transform Ball;
     [SerializeField] public Transform Game;
+    [SerializeField] public Transform HowToPlay;
+    [SerializeField] public Transform howToPlay1;
+    [SerializeField] public Transform howToPlay2;
     
     public AudioSource music;
     private bool PlaySound = true;
@@ -38,5 +41,24 @@ public class GameManagement : MonoBehaviour
         {
             music.Stop();
         }
+    }
+    public void HowToPlayButton()
+    {
+        Menu.gameObject.SetActive(false);
+        HowToPlay.gameObject.SetActive(true);
+    }
+
+
+    public void NextHowToPlay1()
+    {
+        howToPlay1.gameObject.SetActive(false);
+        howToPlay2.gameObject.SetActive(true);
+    }
+
+    public void NextHowToPlay2()
+    {
+        howToPlay2.gameObject.SetActive(false);
+        HowToPlay.gameObject.SetActive(false);
+        Menu.gameObject.SetActive(true);
     }
 }
