@@ -12,7 +12,6 @@ public class GameManagement : MonoBehaviour
     [SerializeField] public Transform HowToPlay;
     [SerializeField] public Transform howToPlay1;
     [SerializeField] public Transform howToPlay2;
-    private int _howtoplaycounter = 0;
 
     public AudioSource music;
     private bool _playSound = true;

@@ -31,6 +31,7 @@ public class CameraMovement : MonoBehaviour
             else if (Input.GetMouseButton(0))
             {
                 Vector3 newPosition = cam.ScreenToViewportPoint(Input.mousePosition);
+
                 Vector3 direction = previousPosition - newPosition;
 
                 float rotationAroundYAxis = -direction.x * maxRotationInOneSwipe; // camera moves horizontally
@@ -46,16 +47,16 @@ public class CameraMovement : MonoBehaviour
 
                 previousPosition = newPosition;
             }
-            else
-            {
-                Vector3 newPosition = new Vector3(target.position.x, target.position.y + 5, target.position.z + 5);
+        }
+        else
+        {
+            Vector3 newPosition = new Vector3(target.position.x, target.position.y + 5, target.position.z + 5);
 
-                cam.transform.position = target.position;
+            cam.transform.position = target.position;
 
-                cam.transform.Translate(new Vector3(0, 0, -distanceToTarget));
+            cam.transform.Translate(new Vector3(0, 0, -distanceToTarget));
 
-                previousPosition = newPosition;
-            }
+            previousPosition = newPosition;
         }
     }
 }
