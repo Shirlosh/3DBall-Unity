@@ -28,7 +28,7 @@ public class Goal : MonoBehaviour {
             yield return 0;
         }
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
 }
