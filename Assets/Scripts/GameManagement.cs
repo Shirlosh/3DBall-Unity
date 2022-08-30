@@ -46,6 +46,7 @@ public class GameManagement : MonoBehaviour
     {
         Menu.gameObject.SetActive(false);
         HowToPlay.gameObject.SetActive(true);
+        Debug.Log("actived");
     }
 
 
