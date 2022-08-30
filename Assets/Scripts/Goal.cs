@@ -9,7 +9,7 @@ public class Goal : MonoBehaviour {
     [SerializeField] public Transform Victory;
     [SerializeField] public float TextTimer;
 
-     void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         MoveBall component = other.gameObject.GetComponent<MoveBall>();
         if (component != null)
@@ -18,7 +18,7 @@ public class Goal : MonoBehaviour {
         }
     }
 
-     IEnumerator OnCollision()
+    IEnumerator OnCollision()
     {
         Time.timeScale = 0;
         Victory.gameObject.SetActive(true);
@@ -28,7 +28,7 @@ public class Goal : MonoBehaviour {
             yield return 0;
         }
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
 }
